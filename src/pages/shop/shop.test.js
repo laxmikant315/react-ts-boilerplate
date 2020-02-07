@@ -9,10 +9,7 @@ import { ShopPage } from './shop.component';
 export const createMockStore = ({ state, reducers }) => {
   const store = createStore(combineReducers(reducers), state);
   return {
-    ...store,
-    persistor: {
-      persist: () => null
-    }
+    ...store
   };
 };
 

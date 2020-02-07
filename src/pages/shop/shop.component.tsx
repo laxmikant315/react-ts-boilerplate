@@ -5,28 +5,17 @@ import Button from '@material-ui/core/Button';
 
 import { ShopStyle } from './shop.styles';
 import { Switch, Link } from 'react-router-dom';
-import Spinner from '../../components/spinner/spinner.component';
 import { RouteWithSubRoutes } from '../../routes';
-
-const Bus = (props: any) => (
-  <h1>Bus </h1>
-)
-
-const Cart = (props: any) => (
-  <h1>Cart </h1>
-)
 
 export const ShopPage = (props: any) => {
 
 
   const { collections, fetchCollectionsStart, routes } = props;
 
-  console.log(props)
   useEffect(() => {
     fetchCollectionsStart();
 
-    console.log(routes);
-  }, []);
+  }, [fetchCollectionsStart]);
 
   return (
     <ShopStyle>

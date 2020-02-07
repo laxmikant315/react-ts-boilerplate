@@ -1,11 +1,13 @@
-import React from "react";
+import React, { lazy } from "react";
 import {
-    Switch,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
-import HomePage from "./pages/homepage/homepage.component";
-import shopContainer from "./pages/shop/shop.container";
+
+const HomePage = lazy(() => import('./pages/homepage/homepage.component'));
+const ShopContainer = lazy(() => import('./pages/shop/shop.container'));
+
+
+
 
 const routes = [
     {
@@ -15,7 +17,7 @@ const routes = [
     },
     {
         path: "/shop",
-        component: shopContainer,
+        component: ShopContainer,
         routes: [
             {
                 path: "/shop/bus",
@@ -42,9 +44,6 @@ function RouteWithSubRoutes(route: any) {
     );
 }
 
-function Sandwiches() {
-    return <h2>Sandwiches</h2>;
-}
 
 function Bus() {
     return <h3>Bus</h3>;
